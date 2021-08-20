@@ -1,3 +1,6 @@
+import random
+
+
 def heapify(arr, arrLength, num):
   root = num  # Inicializando um número para ser a raiz
   left = 2 * num + 1  # Filho da esquerda
@@ -34,8 +37,13 @@ def heapSort(arr):
     heapify(arr, i, 0)
 
 
+def generateArray(size):
+  return random.sample(range(1, size), size)
+
+
+arrSize = int(input("Digite o tamanho do array: "))
 # Array que será organizado
-arr = [8, 5, 9, 3, 7, 1, 4, 2, 6, 10]
+arr = generateArray(arrSize)
 # Chamada da função heapSort que vai organizar o array original
 print(arr)
 heapSort(arr)
