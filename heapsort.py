@@ -38,7 +38,7 @@ def heapSort(arr):
 
 
 def generateArray(size):
-  return random.sample(range(0, size + 1), size + 1)
+  return random.sample(range(0, size), size)
 
 
 arrSize = int(input("Digite o tamanho do array: "))
