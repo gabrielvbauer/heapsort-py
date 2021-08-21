@@ -1,3 +1,7 @@
+import time
+arrSize = int(input("Digite o tamanho do array: "))
+
+start = time.time()
 import random
 
 
@@ -41,10 +45,11 @@ def generateArray(size):
   return random.sample(range(0, size), size)
 
 
-arrSize = int(input("Digite o tamanho do array: "))
 # Array que será organizado
 arr = generateArray(arrSize)
 # Chamada da função heapSort que vai organizar o array original
 print(arr)
 heapSort(arr)
+end = time.time()
 print(arr)
+print("\nThe time of execution of above program is :", end-start)
