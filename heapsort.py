@@ -1,8 +1,15 @@
-import time
-arrSize = int(input("Digite o tamanho do array: "))
-
-start = time.time()
+import visualization
 import random
+
+arr = random.sample(range(512), 512)
+
+
+def run():
+  hp()
+
+
+def update_display(swap1, swap2):
+  visualization.update(swap1, swap2)
 
 
 def heapify(arr, arrLength, num):
@@ -21,14 +28,14 @@ def heapify(arr, arrLength, num):
   # caso algum dos elementos filhos seja maior, a troca de elementos raiz é feita
   if root != num:
     arr[num], arr[root] = arr[root], arr[num]
+    update_display(arr[num], arr[root])
     
     # Construindo um novo maxheap com as novas mudanças na árvore
     heapify(arr, arrLength, root)
   
 
-
 # A função heapSort organiza um array dado como parâmetro
-def heapSort(arr):  
+def hp():  
   arrLength = len(arr)
 
   # Constrói o maxheap
@@ -39,17 +46,3 @@ def heapSort(arr):
   for i in range(arrLength - 1, 0, -1):
     arr[i], arr[0] = arr[0], arr[i]
     heapify(arr, i, 0)
-
-
-def generateArray(size):
-  return random.sample(range(0, size), size)
-
-
-# Array que será organizado
-arr = generateArray(arrSize)
-# Chamada da função heapSort que vai organizar o array original
-print(arr)
-heapSort(arr)
-end = time.time()
-print(arr)
-print("\nThe time of execution of above program is :", end-start)
