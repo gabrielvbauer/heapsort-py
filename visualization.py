@@ -54,7 +54,7 @@ def check_events():
 def update(swap1=None, swap2=None, display=display):
   display.fill(pygame.Color("black"))
   pygame.display.set_caption(
-    "Sorting Visiualiser     Algorithm: HeapSort        Status: Sorting"
+    "Sorting Visiualiser        Algorithm: HeapSort"
   )
 
   k = int(dimensions[0] / len(arr))
@@ -71,7 +71,7 @@ def update(swap1=None, swap2=None, display=display):
 
 def keep_open():
   pygame.display.set_caption(
-    "Sorting Visiualiser     Algorithm: HeapSort        Status: Done"
+    "Sorting Visiualiser        Algorithm: HeapSort"
   )
 
   while True:
